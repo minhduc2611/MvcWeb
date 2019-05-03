@@ -12571,11 +12571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/minhduc/Desktop/MINHDUC/code/MvcWeb/project/project.csproj",
+      "projectUniqueName": "/Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/project.csproj",
       "projectName": "project",
-      "projectPath": "/Users/minhduc/Desktop/MINHDUC/code/MvcWeb/project/project.csproj",
+      "projectPath": "/Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/project.csproj",
       "packagesPath": "/Users/minhduc/.nuget/packages/",
-      "outputPath": "/Users/minhduc/Desktop/MINHDUC/code/MvcWeb/project/obj/",
+      "outputPath": "/Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -36,3 +36,8 @@ I. First commit
     options.UseSqlServer(Configuration.GetConnectionString("eStoreMac"));
     });
 
+6.( No Database Added ) Migration and database update
+    
+        dotnet ef migrations add InitialCreate
+        dotnet ef database update
+
