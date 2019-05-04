@@ -1,3 +1,5 @@
+@model IEnumerable<project.Models.Loai>
+
 <div class="container">
 <h2>
     Hang Hoa
@@ -8,30 +10,48 @@
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hinh)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>fat</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>twitter</td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                 <td>
+                    <!--<img class="img-responsive img-thumbnail" style="max-height:100px;" src="~/images/Hinh/Loai/@item.Hinh" />
+                    @*tml.DisplayFor(modelItem => item.Hinh)*@-->
+                </td> 
+                <td>
+                    <a data-toggle="modal" data-target="#myModal" asp-route-id="@item.MaLoai" asp-controller="Loai" asp-action="Edit" class="btn btn-info"> <i class='far fa-edit'></i> Edit </a>
+                    <a data-toggle="modal" data-target="#myModal" asp-route-id="@item.MaLoai" asp-controller="Loai" asp-action="Details" class="btn btn-success"> <i class='far fa-file'></i> Details </a>
+                    <a data-toggle="modal" data-target="#myModal" asp-route-id="@item.MaLoai" asp-controller="Loai" asp-action="Delete" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Delete </a>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
     </tbody>
     </table>
 </div>

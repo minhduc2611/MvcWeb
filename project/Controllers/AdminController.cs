@@ -10,8 +10,16 @@ namespace project.Controllers
 {
     public class AdminController: Controller
     {
-        public IActionResult index(){
-            return View();
+        public MyDbContext ctx;
+
+        public AdminController(MyDbContext context)
+        {
+            this.ctx = context;
+        }
+        public IActionResult index()
+        {
+            var dsLoai = ctx.Loai.OrderBy(p => p.TenLoai);
+            return View(dsLoai);
         }
     }
 }
