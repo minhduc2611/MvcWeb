@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using project.Models;
 
 namespace project.Controllers
@@ -16,10 +17,28 @@ namespace project.Controllers
         {
             this.ctx = context;
         }
-        public IActionResult index()
+        public IActionResult Index()
         {
-            var dsLoai = ctx.Loai.OrderBy(p => p.TenLoai);
+            var dsLoai = ctx.Loai.OrderBy(p => p.MaLoai);
             return View(dsLoai);
+        }
+
+        public IActionResult Create()
+        {
+            ViewData["MaLoai"] = new SelectList(ctx.Loai, "MaLoai", "TenLoai");
+            return View();
+        }
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("MaHh,TenLoai,MoTa,Hinh")] Loai Loai)
+        {
+            if (ModelState.IsValid)
+            {
+                ctx.Add(Loai);
+                await ctx.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(Loai);
         }
     }
 }

@@ -147,3 +147,4 @@ C:/Users/NN/source/repos/aspNhatnghe/aspNhatnghe/project/project/obj/Debug/netco
 /Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/obj/Debug/netcoreapp2.1/project.dll
 /Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/obj/Debug/netcoreapp2.1/project.pdb
 /Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/obj/Debug/netcoreapp2.1/project.csproj.CopyComplete
+/Users/minhduc/Desktop/MINHDUC/code/github/MvcWeb/project/obj/Debug/netcoreapp2.1/Razor/Views/Admin/Create.g.cshtml.cs
